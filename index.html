@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecoo Food - O fim do desperdício</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'], },
+                }
+            }
+        }
+    </script>
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="bg-slate-50 text-slate-800 selection:bg-emerald-200 selection:text-emerald-900 overflow-x-hidden font-sans">
+
+    <div id="view-landing">
+        
+        <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 bg-transparent py-4">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-16">
+                    <div class="flex items-center gap-2 group cursor-pointer" onclick="window.scrollTo(0,0)">
+                        <div class="w-10 h-10 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-xl flex items-center justify-center shadow-lg shadow-emerald-600/30 group-hover:scale-105 transition-all">
+                            <i data-lucide="leaf" class="text-white w-6 h-6 group-hover:rotate-12 transition-transform"></i>
+                        </div>
+                        <span class="font-bold text-2xl tracking-tight text-slate-900">Ecoo<span class="text-emerald-600">Food</span></span>
+                    </div>
+
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="#como-funciona" class="text-slate-600 hover:text-emerald-600 font-medium transition-colors">Como Funciona</a>
+                        <a href="#nossa-historia" class="text-slate-600 hover:text-emerald-600 font-medium transition-colors">História</a>
+                        <a href="#empresas" class="text-slate-600 hover:text-emerald-600 font-medium transition-colors">Para Empresas</a>
+                        <button onclick="document.getElementById('lista-de-espera').scrollIntoView({ behavior: 'smooth' })" class="bg-emerald-50 text-emerald-700 px-6 py-2.5 rounded-full font-semibold hover:bg-emerald-600 hover:text-white transition-all">Participar</button>
+                    </div>
+
+                    <div class="md:hidden flex items-center">
+                        <button id="menu-btn" class="text-slate-600 hover:text-emerald-600 p-2"><i data-lucide="menu" class="w-6 h-6"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="mobile-menu" class="md:hidden absolute w-full bg-white/95 backdrop-blur-xl border-t border-slate-100 shadow-2xl transition-all duration-300 ease-in-out max-h-0 opacity-0 invisible overflow-hidden">
+                <div class="px-4 py-6 space-y-2">
+                    <a href="#como-funciona" class="block px-4 py-3 text-base font-semibold text-slate-700 hover:bg-emerald-50 hover:text-emerald-600 rounded-xl">Como Funciona</a>
+                    <a href="#nossa-historia" class="block px-4 py-3 text-base font-semibold text-slate-700 hover:bg-emerald-50 hover:text-emerald-600 rounded-xl">Nossa História</a>
+                    <a href="#empresas" class="block px-4 py-3 text-base font-semibold text-slate-700 hover:bg-emerald-50 hover:text-emerald-600 rounded-xl">Para Empresas</a>
+                    <a href="#impacto" class="block px-4 py-3 text-base font-semibold text-slate-700 hover:bg-emerald-50 hover:text-emerald-600 rounded-xl">Impacto</a>
+                </div>
+            </div>
+        </nav>
+
+        <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-24 overflow-hidden bg-white">
+            <div class="absolute top-0 right-0 -translate-y-12 w-[600px] h-[600px] bg-emerald-300/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
+            <div class="absolute top-0 left-0 translate-y-1/3 -translate-x-1/3 w-[500px] h-[500px] bg-orange-300/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-8">
+                
+                <div class="w-full lg:w-1/2 text-center lg:text-left pt-10 lg:pt-0">
+                    <div class="reveal inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-emerald-100 shadow-sm text-emerald-700 font-medium text-sm mb-8 mx-auto lg:mx-0">
+                        <span class="flex h-2 w-2 relative">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                        </span>
+                        Não somos um app de desconto. Somos impacto real.
+                    </div>
+                    
+                    <h1 class="reveal delay-100 text-5xl md:text-6xl lg:text-[4.5rem] font-extrabold text-slate-900 tracking-tight leading-[1.1] mb-6 max-w-2xl mx-auto lg:mx-0">
+                        Transforme o <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-emerald-400">desperdício</span> em <span class="relative inline-block">
+                            refeições
+                            <svg class="absolute w-full h-3 -bottom-1 left-0 text-orange-500 opacity-80" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 5 Q 50 15 100 5" stroke="currentColor" stroke-width="8" fill="transparent" stroke-linecap="round"/></svg>
+                        </span>
+                    </h1>
+                    
+                    <p class="reveal delay-200 text-lg md:text-xl text-slate-600 mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0">
+                        O Ecoo Food conecta de forma inteligente alimentos excedentes de restaurantes e supermercados a ONGs e famílias vulneráveis. Doação rápida, segura e com rastreabilidade ESG.
+                    </p>
+
+                    <div class="reveal delay-300 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-8">
+                        <button onclick="selectRoleAndScroll('Quero doar alimentos')" class="w-full sm:w-auto px-8 py-4 bg-orange-500 text-white rounded-2xl font-bold text-lg hover:bg-orange-600 transition-all shadow-xl shadow-orange-500/30 hover:-translate-y-1 flex justify-center items-center gap-2">
+                            Quero Doar Alimentos <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </button>
+                        <button onclick="selectRoleAndScroll('Quero ser voluntário')" class="w-full sm:w-auto px-8 py-4 bg-white border border-slate-200 text-slate-600 hover:border-emerald-300 hover:text-emerald-700 rounded-2xl font-semibold text-lg hover:bg-emerald-50 transition-all hover:-translate-y-1">
+                            Quero ser Voluntário
+                        </button>
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-1/2 relative flex justify-center perspective-1000">
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-96 bg-gradient-to-tr from-emerald-400/40 to-orange-400/30 blur-[80px] rounded-full z-0 animate-pulse"></div>
+
+                    <div class="relative z-10 w-[280px] sm:w-[320px] h-[580px] sm:h-[640px] bg-slate-50 border-[10px] border-slate-900 rounded-[2.5rem] shadow-2xl animate-float-slow transform hover:scale-[1.02] transition-transform duration-500">
+                        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-6 bg-slate-900 rounded-b-xl z-20"></div>
+
+                        <div class="w-full h-full rounded-[1.8rem] overflow-hidden bg-slate-50 flex flex-col relative pt-12">
+                            
+                            <div class="hero-screen absolute inset-0 pt-12 px-4 flex flex-col items-center justify-center bg-emerald-600 transition-opacity duration-700 z-10 opacity-100">
+                                <div class="w-20 h-20 bg-white rounded-2xl flex items-center justify-center shadow-lg mb-6 animate-bounce">
+                                    <i data-lucide="leaf" class="w-10 h-10 text-emerald-600"></i>
+                                </div>
+                                <h2 class="text-3xl font-extrabold text-white tracking-tight mb-2">EcooFood</h2>
+                                <div class="flex items-center gap-2 text-emerald-100 bg-white/20 px-4 py-2 rounded-full mt-8">
+                                    <div class="w-3 h-3 border-2 border-emerald-100 border-t-transparent rounded-full animate-spin"></div>
+                                    <span class="text-sm font-medium">Autenticando...</span>
+                                </div>
+                            </div>
+
+                            <div class="hero-screen absolute inset-0 pt-12 px-4 bg-slate-50 transition-opacity duration-700 z-10 flex flex-col opacity-0 pointer-events-none">
+                                <div class="text-center mt-6 mb-8 relative">
+                                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-orange-400/20 rounded-full animate-ping"></div>
+                                    <div class="relative z-10 w-14 h-14 bg-white rounded-full flex items-center justify-center mx-auto shadow-lg border border-orange-100">
+                                        <i data-lucide="map-pin" class="w-6 h-6 text-orange-500"></i>
+                                    </div>
+                                </div>
+                                <h3 class="text-center font-bold text-slate-900 text-lg mb-2">Buscando coletas...</h3>
+                                <p class="text-center text-sm text-slate-500 mb-6">Smart Match ativado</p>
+                                <div class="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm opacity-50 mt-4">
+                                    <div class="h-3 bg-slate-100 rounded w-3/4 mb-2 animate-pulse"></div>
+                                    <div class="h-2 bg-slate-100 rounded w-1/2 animate-pulse"></div>
+                                </div>
+                            </div>
+
+                            <div class="hero-screen absolute inset-0 pt-12 px-4 bg-slate-50 transition-opacity duration-700 z-10 flex flex-col opacity-0 pointer-events-none">
+                                <div class="mb-4">
+                                    <p class="text-slate-500 text-xs font-medium">Rota Aceita!</p>
+                                    <h3 class="font-bold text-slate-900 text-lg">Padaria Central</h3>
+                                </div>
+                                <div class="bg-white p-4 rounded-2xl shadow-sm border border-emerald-100 mb-4">
+                                    <div class="w-10 h-10 bg-orange-50 rounded-full flex items-center justify-center mb-2">
+                                        <i data-lucide="utensils" class="w-5 h-5 text-orange-500"></i>
+                                    </div>
+                                    <p class="font-bold text-slate-900">Pães e salgados</p>
+                                    <p class="text-xs text-slate-500 mt-1">15 itens</p>
+                                </div>
+                                <div class="bg-emerald-500 p-4 rounded-2xl text-white">
+                                    <p class="font-bold text-sm">A conduzir até à ONG</p>
+                                    <p class="text-emerald-100 text-xs">Chega em 8 min</p>
+                                </div>
+                            </div>
+
+                            <div class="hero-screen absolute inset-0 pt-16 px-4 bg-slate-900 transition-opacity duration-700 z-10 flex flex-col items-center text-center opacity-0 pointer-events-none">
+                                <div class="w-20 h-20 bg-emerald-500 rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(16,185,129,0.5)] mb-6 mt-10">
+                                    <i data-lucide="check-circle" class="w-10 h-10 text-white"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-white mb-2">Coleta Finalizada!</h3>
+                                <p class="text-emerald-400 text-sm mb-8">ONG Esperança recebeu.</p>
+                                <div class="w-full bg-slate-800 rounded-2xl p-5 border border-slate-700">
+                                    <p class="text-xs text-slate-400 font-bold uppercase mb-4">Impacto gerado</p>
+                                    <div class="flex justify-between text-white font-bold"><span class="text-orange-500">+15 Refeições</span> <span class="text-emerald-400">4.5 kg CO2</span></div>
+                                </div>
+                            </div>
+
+                            <div class="absolute bottom-4 left-4 right-4 h-14 bg-white/90 backdrop-blur-sm rounded-2xl flex items-center justify-around z-50 shadow-sm border border-slate-100">
+                                <i data-lucide="home" class="w-5 h-5 text-emerald-600"></i>
+                                <i data-lucide="bar-chart-3" class="w-5 h-5 text-slate-400"></i>
+                                <i data-lucide="user" class="w-5 h-5 text-slate-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="como-funciona" class="py-24 bg-slate-50 border-y border-slate-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="reveal text-center max-w-3xl mx-auto mb-20">
+                    <h2 class="text-3xl md:text-5xl font-bold text-slate-900 mb-6">O caminho da comida até a quem tem fome</h2>
+                    <p class="text-lg text-slate-600">Unimos tecnologia e a força voluntária para criar a logística da solidariedade.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+                    <div class="reveal delay-100 bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100 hover:-translate-y-2 transition-all hover:shadow-2xl hover:shadow-emerald-900/5 group">
+                        <div class="w-16 h-16 bg-emerald-50 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-emerald-600 transition-colors">
+                            <i data-lucide="store" class="w-8 h-8 text-emerald-600 group-hover:text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4 group-hover:text-emerald-700">1. O Estabelecimento Doa</h3>
+                        <p class="text-slate-600">Restaurantes e supermercados separam alimentos excedentes em perfeito estado. Rápido e sem burocracia.</p>
+                    </div>
+                    
+                    <div class="reveal delay-200 bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100 hover:-translate-y-2 transition-all hover:shadow-2xl hover:shadow-orange-900/5 group relative">
+                        <div class="absolute -top-4 -right-2 bg-gradient-to-r from-orange-500 to-orange-400 text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-lg animate-pulse">Delivery Solidário</div>
+                        <div class="w-16 h-16 bg-orange-50 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-orange-500 transition-colors">
+                            <i data-lucide="truck" class="w-8 h-8 text-orange-600 group-hover:text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4 group-hover:text-orange-600">2. Smart Match e Coleta</h3>
+                        <p class="text-slate-600">A nossa IA cruza a doação com as ONGs. Um motorista voluntário aceita a rota e faz a recolha.</p>
+                    </div>
+
+                    <div class="reveal delay-300 bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100 hover:-translate-y-2 transition-all hover:shadow-2xl hover:shadow-emerald-900/5 group">
+                        <div class="w-16 h-16 bg-emerald-50 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-emerald-600 transition-colors">
+                            <i data-lucide="heart-handshake" class="w-8 h-8 text-emerald-600 group-hover:text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4 group-hover:text-emerald-700">3. A ONG Recebe</h3>
+                        <p class="text-slate-600">O alimento chega à mesa de famílias em vulnerabilidade. Seguro, rastreável e com impacto imediato.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="nossa-historia" class="py-24 bg-white relative border-t border-slate-100">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="reveal inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 text-emerald-700 font-bold text-sm mb-6"><i data-lucide="leaf" class="w-4 h-4"></i> Nossa Missão</div>
+                <h2 class="reveal text-4xl md:text-5xl font-extrabold text-slate-900 mb-10">A história por trás do <span class="text-emerald-600">Ecoo Food</span></h2>
+                <p class="reveal delay-100 text-xl md:text-2xl text-slate-700 font-medium leading-relaxed max-w-3xl mx-auto mb-10">
+                    Tudo começou com uma pergunta simples…<br>
+                    <span class="block mt-6 text-2xl md:text-3xl text-emerald-600 font-extrabold italic bg-emerald-50/50 p-6 rounded-2xl border border-emerald-100 shadow-sm relative">
+                        "Como ainda existe tanta fome, enquanto toneladas de comida são desperdiçadas todos os dias?"
+                    </span>
+                </p>
+                <div class="reveal delay-200 text-lg text-slate-600 max-w-2xl mx-auto space-y-6 text-left">
+                    <p>Não fazia sentido. Não era falta de comida. Era falta de conexão.</p>
+                    <p>Foi então que surgiu o Ecoo Food. Uma ponte entre quem tem excedentes e as ONGs que precisam. <strong class="text-emerald-700">Transformamos alimentos descartados em refeições que mudam vidas.</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="empresas" class="py-32 bg-slate-50 border-t border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col lg:flex-row items-center gap-20">
+                    <div class="lg:w-1/2">
+                        <div class="reveal inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-100 border border-orange-200 text-orange-700 font-bold text-sm mb-8"><i data-lucide="award" class="w-4 h-4"></i> Vantagens para Parceiros</div>
+                        <h2 class="reveal delay-100 text-4xl md:text-5xl font-bold text-slate-900 mb-6">O seu negócio a gerar <span class="text-emerald-600">impacto.</span></h2>
+                        <p class="reveal delay-200 text-lg text-slate-600 mb-10">Doar reduz os custos com o descarte e posiciona a sua marca como líder em responsabilidade social e ESG.</p>
+                        <div class="space-y-8">
+                            <div class="reveal delay-300 flex gap-5">
+                                <div class="w-14 h-14 bg-white shadow border border-slate-100 rounded-2xl flex items-center justify-center shrink-0"><i data-lucide="award" class="w-7 h-7 text-emerald-600"></i></div>
+                                <div><h4 class="text-xl font-bold text-slate-900 mb-2">Selo Empresa Contra a Fome</h4><p class="text-slate-600">Receba certificação oficial de impacto social para atrair clientes conscientes.</p></div>
+                            </div>
+                            <div class="reveal delay-400 flex gap-5">
+                                <div class="w-14 h-14 bg-white shadow border border-slate-100 rounded-2xl flex items-center justify-center shrink-0"><i data-lucide="bar-chart-3" class="w-7 h-7 text-emerald-600"></i></div>
+                                <div><h4 class="text-xl font-bold text-slate-900 mb-2">Relatórios ESG Completos</h4><p class="text-slate-600">Aceda a dashboards em tempo real com métricas de sustentabilidade (água, CO2).</p></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2 reveal delay-300 w-full animate-float">
+                        <div class="bg-white border border-slate-100 rounded-[2rem] shadow-2xl p-8">
+                            <div class="flex justify-between items-center border-b border-slate-100 pb-5 mb-8">
+                                <div><p class="text-xs text-slate-500 font-bold uppercase mb-1">Dashboard ESG MENSAL</p><p class="text-2xl font-bold text-slate-900">Padaria Central</p></div>
+                                <div class="bg-yellow-50 text-yellow-700 px-4 py-1.5 rounded-full text-sm font-bold flex gap-1"><i data-lucide="award" class="w-4 h-4"></i> Selo Ouro</div>
+                            </div>
+                            <div class="space-y-5">
+                                <div class="bg-slate-50 p-5 rounded-2xl flex justify-between items-center border border-slate-100">
+                                    <div class="flex gap-4 items-center">
+                                        <div class="w-12 h-12 bg-white shadow-sm rounded-full flex items-center justify-center"><i data-lucide="heart-handshake" class="w-6 h-6 text-orange-500"></i></div>
+                                        <div><p class="text-sm text-slate-500">Refeições Doadas</p><p class="text-2xl font-extrabold">1.248</p></div>
+                                    </div>
+                                    <span class="bg-emerald-100 text-emerald-700 px-2 py-1 rounded-lg text-sm font-bold">+12%</span>
+                                </div>
+                                <div class="bg-slate-50 p-5 rounded-2xl flex gap-4 items-center border border-slate-100">
+                                    <div class="w-12 h-12 bg-white shadow-sm rounded-full flex items-center justify-center"><i data-lucide="leaf" class="w-6 h-6 text-emerald-500"></i></div>
+                                    <div><p class="text-sm text-slate-500">CO₂ Evitado (kg)</p><p class="text-2xl font-extrabold">450.5</p></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="impacto" class="py-24 bg-slate-900 relative">
+            <div class="max-w-7xl mx-auto px-4 text-center relative z-10">
+                <h2 class="reveal text-4xl md:text-5xl font-bold text-white mb-6">Sustentabilidade Inteligente</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
+                    <div class="reveal delay-100 p-8 border border-white/10 rounded-3xl bg-white/5"><p class="text-5xl font-extrabold text-white mb-2">24.5<span class="text-emerald-400">t</span></p><p class="text-slate-300">Alimentos salvos</p></div>
+                    <div class="reveal delay-200 p-8 border border-white/10 rounded-3xl bg-white/5"><p class="text-5xl font-extrabold text-white mb-2">48.2<span class="text-emerald-400">t</span></p><p class="text-slate-300">CO₂ evitados</p></div>
+                    <div class="reveal delay-300 p-8 border border-white/10 rounded-3xl bg-white/5"><p class="text-5xl font-extrabold text-white mb-2">3.1<span class="text-emerald-400">M</span></p><p class="text-slate-300">Litros de água</p></div>
+                    <div class="reveal delay-400 p-8 border border-white/10 rounded-3xl bg-white/5"><p class="text-5xl font-extrabold text-white mb-2">120<span class="text-emerald-400">+</span></p><p class="text-slate-300">ONGs abastecidas</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 bg-slate-50 border-t border-slate-200">
+            <div class="max-w-3xl mx-auto px-4">
+                <h2 class="reveal text-3xl md:text-4xl font-bold text-center text-slate-900 mb-12">Perguntas Frequentes</h2>
+                <div class="space-y-4">
+                    <div class="faq-item reveal bg-white rounded-2xl border border-slate-200 transition-all overflow-hidden">
+                        <button class="faq-button w-full p-6 flex justify-between items-center gap-4 text-left">
+                            <h3 class="font-bold text-lg text-slate-800 transition-colors">O Ecoo Food cobra alguma taxa das ONGs?</h3>
+                            <div class="icon-container w-8 h-8 rounded-full flex items-center justify-center shrink-0 bg-slate-50 text-slate-400 transition-colors">
+                                <i data-lucide="chevron-down" class="faq-icon w-5 h-5 transition-transform duration-300"></i>
+                            </div>
+                        </button>
+                        <div class="faq-content max-h-0 opacity-0 overflow-hidden transition-all duration-300 ease-in-out">
+                            <p class="text-slate-600 px-6 pb-6 pt-2">Não. A plataforma é 100% gratuita para ONGs. A nossa missão é facilitar o acesso.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item reveal bg-white rounded-2xl border border-slate-200 transition-all overflow-hidden">
+                        <button class="faq-button w-full p-6 flex justify-between items-center gap-4 text-left">
+                            <h3 class="font-bold text-lg text-slate-800 transition-colors">Restaurantes têm responsabilidade legal?</h3>
+                            <div class="icon-container w-8 h-8 rounded-full flex items-center justify-center shrink-0 bg-slate-50 text-slate-400 transition-colors">
+                                <i data-lucide="chevron-down" class="faq-icon w-5 h-5 transition-transform duration-300"></i>
+                            </div>
+                        </button>
+                        <div class="faq-content max-h-0 opacity-0 overflow-hidden transition-all duration-300 ease-in-out">
+                            <p class="text-slate-600 px-6 pb-6 pt-2">Atuamos em conformidade com as leis de doação que protegem o doador de boa-fé. Garantimos a rastreabilidade.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="lista-de-espera" class="py-32 bg-white border-t border-slate-100">
+            <div class="max-w-3xl mx-auto px-4 text-center">
+                <h2 class="reveal text-4xl font-extrabold text-slate-900 mb-6">Seja um dos primeiros a fazer parte</h2>
+                <p class="reveal text-xl text-slate-600 mb-12">Junte-se à lista de espera e acompanhe o lançamento.</p>
+                
+                <div class="reveal bg-white p-8 sm:p-12 rounded-[2.5rem] shadow-2xl border border-slate-100 text-left">
+                    <div id="success-message" class="hidden text-center py-10 animate-fade-in-up">
+                        <div class="w-24 h-24 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6"><i data-lucide="check-circle" class="w-12 h-12 text-emerald-600"></i></div>
+                        <h3 class="text-3xl font-extrabold text-slate-900 mb-4">Você está dentro! 🚀</h3>
+                        <p class="text-slate-600 text-lg mb-8">Muito obrigado. Os seus dados foram guardados com sucesso.</p>
+                        <button id="reset-form-btn" class="text-emerald-600 font-bold hover:text-emerald-700">Enviar nova resposta</button>
+                    </div>
+
+                    <form id="waitlist-form" class="space-y-8 animate-fade-in-up">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="text-sm font-bold text-slate-700">O seu Nome</label>
+                                <input type="text" id="input-nome" required class="w-full px-5 py-4 rounded-xl border border-slate-200 bg-slate-50 focus:ring-2 focus:ring-emerald-500 outline-none" placeholder="O seu nome">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-sm font-bold text-slate-700">O seu E-mail *</label>
+                                <input type="email" id="input-email" required class="w-full px-5 py-4 rounded-xl border border-slate-200 bg-slate-50 focus:ring-2 focus:ring-emerald-500 outline-none" placeholder="exemplo@email.com">
+                            </div>
+                        </div>
+
+                        <div class="space-y-3">
+                            <label class="text-sm font-bold text-slate-700">Como quer participar?</label>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <button type="button" data-role="Quero doar alimentos" class="role-btn px-4 py-4 rounded-xl border-2 border-slate-100 text-left font-semibold text-slate-600 hover:bg-slate-50">Quero doar alimentos</button>
+                                <button type="button" data-role="Sou uma ONG" class="role-btn px-4 py-4 rounded-xl border-2 border-slate-100 text-left font-semibold text-slate-600 hover:bg-slate-50">Sou uma ONG</button>
+                                <button type="button" data-role="Quero ser voluntário" class="role-btn px-4 py-4 rounded-xl border-2 border-slate-100 text-left font-semibold text-slate-600 hover:bg-slate-50">Quero ser voluntário</button>
+                                <button type="button" data-role="Só quero acompanhar" class="role-btn px-4 py-4 rounded-xl border-2 border-emerald-500 bg-emerald-50 text-emerald-800 shadow-sm text-left font-semibold">Só quero acompanhar</button>
+                            </div>
+                        </div>
+
+                        <div id="dynamic-fields" class="max-h-0 opacity-0 overflow-hidden transition-all duration-500">
+                            <div id="fields-empresa" class="hidden grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <input type="text" id="input-empresa-nome" class="sm:col-span-2 w-full px-5 py-3 rounded-xl border border-slate-200" placeholder="Nome da Empresa">
+                                <select id="input-empresa-tipo" class="sm:col-span-2 w-full px-5 py-3 rounded-xl border border-slate-200">
+                                    <option value="">Selecione o tipo...</option>
+                                    <option value="Restaurante">Restaurante</option>
+                                    <option value="Mercado">Mercado</option>
+                                    <option value="Padaria">Padaria</option>
+                                    <option value="Outro">Outro</option>
+                                </select>
+                            </div>
+                            <div id="fields-ong" class="hidden grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <input type="text" id="input-ong-nome" class="sm:col-span-2 w-full px-5 py-3 rounded-xl border border-slate-200" placeholder="Nome da ONG">
+                                <input type="text" id="input-ong-cidade" class="sm:col-span-2 w-full px-5 py-3 rounded-xl border border-slate-200" placeholder="Cidade">
+                            </div>
+                            <div id="fields-voluntario" class="hidden grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div class="sm:col-span-2">
+                                    <label class="text-sm font-bold mb-2 block">Tem Veículo?</label>
+                                    <div class="flex gap-4">
+                                        <label class="border px-4 py-2 rounded-lg cursor-pointer hover:bg-slate-50"><input type="radio" name="veiculo" value="Sim"> Sim</label>
+                                        <label class="border px-4 py-2 rounded-lg cursor-pointer hover:bg-slate-50"><input type="radio" name="veiculo" value="Não"> Não</label>
+                                    </div>
+                                </div>
+                                <input type="text" id="input-voluntario-cidade" class="sm:col-span-2 w-full px-5 py-3 rounded-xl border border-slate-200" placeholder="Cidade onde mora">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="w-full py-5 bg-orange-500 text-white rounded-2xl font-bold text-xl hover:bg-orange-600 transition-all shadow-lg hover:-translate-y-1">Quero fazer parte</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <footer class="bg-slate-950 pt-20 pb-8 text-slate-400">
+            <div class="max-w-7xl mx-auto px-4 text-center"><p>© 2024 Ecoo Food. Todos os direitos reservados.</p></div>
+        </footer>
+    </div>
+    
+    <script type="module" src="script.js"></script>
+</body>
+</html>
